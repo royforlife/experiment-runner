@@ -129,15 +129,14 @@ check_data_normality(all_lm$residuals)
 library(randomForest)
 rf_model <- randomForest(energy_efficiency ~ algo * (format + size + entropy) - (format + size + entropy),
                          data = data,
-                         ntree = 500,  # Number of trees (you can adjust)
-                         mtry = 4)  # Number of variables to try at each split (you can adjust)
+                         ntree = 500,
+                         mtry = 4)
 
-# View the Random Forest model summary
+
 print(rf_model)
 
-# Important variables
+
 importance(rf_model)
-varImpPlot(rf_model)
 ```
 
 
